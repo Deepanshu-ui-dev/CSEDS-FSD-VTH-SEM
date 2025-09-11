@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShopEase - Online Shopping</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f1f3f6;
+        }
+        /* Header */
+        .header {
+            background: #2874f0;
+            color: #fff;
+            padding: 16px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .logo {
+            font-size: 2rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+        .search-bar {
+            flex: 1;
+            margin: 0 30px;
+        }
+        .search-bar input {
+            width: 100%;
+            padding: 10px 14px;
+            border: none;
+            border-radius: 2px;
+            font-size: 1rem;
+        }
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 24px;
+            font-weight: 500;
+        }
+        /* Categories */
+        .categories {
+            background: #fff;
+            padding: 12px 40px;
+            display: flex;
+            gap: 32px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .categories a {
+            color: #333;
+            text-decoration: none;
+            font-weight: 500;
+        }
+        /* Products */
+        .products-section {
+            padding: 32px 40px;
+        }
+        .products-title {
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            color: #222;
+        }
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 28px;
+        }
+        .product-card {
+            background: #fff;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+            padding: 18px;
+            text-align: center;
+            transition: box-shadow 0.2s;
+        }
+        .product-card:hover {
+            box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+        }
+        .product-img {
+            width: 120px;
+            height: 120px;
+            object-fit: contain;
+            margin-bottom: 12px;
+        }
+        .product-name {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+            color: #222;
+        }
+        .product-price {
+            color: #388e3c;
+            font-weight: bold;
+            margin-bottom: 8px;
+        }
+        .buy-btn {
+            background: #ff9f00;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 2px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: background 0.2s;
+        }
+        .buy-btn:hover {
+            background: #fb641b;
+        }
+        /* Footer */
+        .footer {
+            background: #232f3e;
+            color: #fff;
+            text-align: center;
+            padding: 18px 0;
+            margin-top: 40px;
+        }
+        @media (max-width: 700px) {
+            .header, .categories, .products-section {
+                padding: 12px;
+            }
+            .products-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        @media (max-width: 500px) {
+            .products-grid {
+                grid-template-columns: 1fr;
+            }
+            .nav-links {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo">ShopEase</div>
+        <div class="search-bar">
+            <input type="text" placeholder="Search for products, brands and more">
+        </div>
+        <div class="nav-links">
+            <a href="#">Login</a>
+            <a href="#">Cart</a>
+            <a href="#">Orders</a>
+        </div>
+    </div>
+    <!-- <div class="categories">
+        <a href="#">Mobiles</a>
+        <a href="#">Electronics</a>
+        <a href="#">Fashion</a>
+        <a href="#">Home</a>
+        <a href="#">Appliances</a>
+        <a href="#">Books</a>
+        <a href="#">More</a>
+    </div> -->
+    <div class="products-section">
+        <div class="products-title">Top Deals</div>
+        <div class="products-grid">
+            <div class="product-card">
+                <img class="product-img" src="https://m.media-amazon.com/images/I/71geVdy6-OS._AC_UY218_.jpg" alt="Mobile">
+                <div class="product-name">Redmi Note 13 Pro</div>
+                <div class="product-price">₹18,999</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img class="product-img" src="https://m.media-amazon.com/images/I/61UxfXTUyvL._AC_UY218_.jpg" alt="Headphones">
+                <div class="product-name">boAt Rockerz 450</div>
+                <div class="product-price">₹1,299</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img class="product-img" src="https://m.media-amazon.com/images/I/81pdeqg0wKL._AC_UL320_.jpg" alt="Shoes">
+                <div class="product-name">Nike Revolution 6</div>
+                <div class="product-price">₹3,499</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img class="product-img" src="https://m.media-amazon.com/images/I/71c5lQGgB+L._AC_UL320_.jpg" alt="Mixer">
+                <div class="product-name">Philips Mixer Grinder</div>
+                <div class="product-price">₹2,799</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+            <div class="product-card">
+                <img class="product-img" src="https://m.media-amazon.com/images/I/81vpsIs58WL._AC_UL320_.jpg" alt="Book">
+                <div class="product-name">Atomic Habits</div>
+                <div class="product-price">₹399</div>
+                <button class="buy-btn">Buy Now</button>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        &copy; 2025 ShopEase. All rights reserved.
+    </div>
+</body>
+</html>
