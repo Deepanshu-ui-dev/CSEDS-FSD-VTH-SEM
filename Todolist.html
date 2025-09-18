@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple To-Do List</title>
+    <style>
+        .completed {
+            text-decoration: line-through;
+            color: gray;
+        }
+        .todo-btn {
+            margin-left: 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>To-Do List</h1>
+    <form id="todo-form" onsubmit="addTodo(); return false;">
+        <input type="text" id="todo-input" placeholder="Enter a task" required>
+        <button type="submit">Add</button>
+    </form>
+    <ul id="todo-list"></ul>
+
+    <script>
+        function addTodo() {
+            let input = document.getElementById('todo-input');
+            let value = input.value.trim();
+            if (value !== "") {
+                let li = document.createElement('li');
+                li.textContent = value;
+
+                let completeBtn = document.createElement('button');
+                completeBtn.textContent = 'Complete';
+                completeBtn.className = 'todo-btn';
+                completeBtn.onclick = function() {
+                    li.classList.toggle('completed');
+                };
+
+                let deleteBtn = document.createElement('button');
+                deleteBtn.textContent = 'Delete';
+                deleteBtn.className = 'todo-btn';
+                deleteBtn.onclick = function() {
+                    li.remove();
+                };
+
+                li.appendChild(completeBtn);
+                li.appendChild(deleteBtn);
+
+                document.getElementById('todo-list').appendChild(li);
+                input.value = "";
+            }
+        }
+    </script>
+</body>
+</html>
